@@ -32,4 +32,4 @@ Before running this project, make sure you have:
 
 ## Installation
 
-1. Clone the repository:
+1. Clone the repository: https://github.com/Arjun9756/Nova-Ai/edit/main/readme.md
