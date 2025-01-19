@@ -1,0 +1,351 @@
+/* Main Chat Interface Styles */
+:root {
+    --bg-dark: #1a1a1f;
+    --bg-light: #2b2b31;
+    --text-primary: #ffffff;
+    --text-secondary: #9ca3af;
+    --accent-green: #2ecc71;
+    --accent-green-dark: #27ae60;
+    --accent-red: #e74c3c;
+    --accent-red-dark: #c0392b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #0f0f0f;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+.nova_main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+.name-signup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #1a1a1a;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.login-signup {
+    display: flex;
+    gap: 1rem;
+}
+
+.login-signup button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    background: #2a2a2a;
+    color: #ffffff;
+    transition: background 0.2s;
+}
+
+.login:hover, .signup:hover {
+    background: #3a3a3a;
+}
+
+/* Chat Area */
+.chat-output-main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem 0;
+}
+
+.chat_output {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.chat_output p {
+    color: #e0e0e0;
+    line-height: 1.6;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: #1a1a1a;
+    border-radius: 4px;
+}
+
+/* Input Area */
+.chat-field {
+    padding: 1rem 2rem;
+    background: #1a1a1a;
+    border-top: 1px solid #2a2a2a;
+}
+
+.chat-box {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #2a2a2a;
+    padding: 0.75rem;
+    border-radius: 4px;
+}
+
+.chat-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 0.5rem;
+    outline: none;
+}
+
+.chat-box input::placeholder {
+    color: #808080;
+}
+
+.pause-chat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: #808080;
+    transition: color 0.2s;
+}
+
+.pause-chat:hover {
+    color: #ffffff;
+}
+
+.pause-chat i {
+    font-size: 1.2rem;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2a2a2a;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3a3a3a;
+}
+
+/* Message Animations */
+@keyframes messageIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chat_output p {
+    animation: messageIn 0.3s ease-out forwards;
+}
+
+.welcome-message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    height:100%;
+}
+.welcome-message img{
+    width:80px;
+    height:80px;
+    margin-bottom: 1rem;
+}
+.welcome-message h2{
+    color:#333;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+.welcome-message p{
+    color:#666;
+    font-size: 1rem;
+    margin-bottom:1rem;
+}
+.suggestion-chips{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.suggestion-chips button{
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    background: #2a2a2a;
+    color: #ffffff;
+    cursor: pointer;
+}
+.suggestion-chips button:hover{
+    background: #3a3a3a;
+    transform: translateY(-2px);
+}
+
+/* Message Styles */
+.message {
+    margin: 1rem 0;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.message-content {
+    padding: 1rem;
+    border-radius: 1rem;
+    position: relative;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+.user-message .message-content {
+    background: #2a2a2a;
+    margin-left: auto;
+    width: 80%;
+    border-radius: 1rem 1rem 0 1rem;
+}
+
+.nova-message .message-content {
+    background: #1a1a1a;
+    margin-right: auto;
+    width: 85%;
+    border-radius: 1rem 1rem 1rem 0;
+}
+
+.user-label, .nova-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.user-label {
+    color: #4f46e5;
+}
+
+.nova-label {
+    color: #2ecc71;
+}
+
+.message-content p {
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin: 0;
+    white-space: pre-wrap;
+    font-size: 0.95rem;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+
+.voice-icon:hover {
+    color: #2ecc71;
+}
+
+/* Loading Animation */
+.typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 8px 0;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background: #4f46e5;
+    border-radius: 50%;
+    animation: typing 1s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Error Message */
+.message.error .message-content {
+    background: rgba(231, 76, 60, 0.1);
+    border: 1px solid #e74c3c;
+}
+
+.message.error .nova-label {
+    color: #e74c3c;
+}
+
+/* Smooth Transitions */
+.message {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: messageIn 0.3s ease-out forwards;
+}
+
+/* Disabled State */
+input:disabled, button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Code Block Styles */
+.code-block {
+    background: #2a2a2a;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.code-block code {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+
